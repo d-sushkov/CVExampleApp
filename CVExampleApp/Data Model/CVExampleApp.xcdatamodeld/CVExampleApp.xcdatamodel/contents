@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="RepoModel" representedClassName=".RepoModel" syncable="YES" codeGenerationType="class">
+        <attribute name="repDescription" optional="YES" attributeType="String"/>
+        <attribute name="repName" attributeType="String"/>
+        <attribute name="repURLString" attributeType="String"/>
+        <attribute name="userAvatarData" optional="YES" attributeType="Binary"/>
+        <attribute name="userAvatarURL" attributeType="URI"/>
+        <attribute name="userName" attributeType="String"/>
+        <attribute name="userType" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="RepoModel" positionX="-260.12890625" positionY="123.1484375" width="128" height="148"/>
+    </elements>
+</model>
