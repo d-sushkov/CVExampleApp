@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITextViewDelegate {
+class DetailViewController: UIViewController {
     
     var selectedItem: RepoModel?
     
@@ -25,22 +25,17 @@ class DetailViewController: UIViewController, UITextViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         adjustLargeTitleSize()
-        if let safeItem = selectedItem {
-            safeItem.loadImage(to: userAvatarImageView)
-            userNameLabel.text = "by \(safeItem.userName ?? "unknown_user")"
-            userTypeLabel.text = "GitHub \(safeItem.userType ?? "User")"
-            descriptionTextView.text = safeItem.repDescription
-            webLinkTextView.isSelectable = true
-            webLinkTextView.text = safeItem.repURLString
-        }
+        guard let safeItem = selectedItem else {return}
+        
+        safeItem.loadImage(to: userAvatarImageView)
+        userNameLabel.text = "by \(safeItem.userName ?? "unknown_user")"
+        userTypeLabel.text = "GitHub \(safeItem.userType ?? "User")"
+        descriptionTextView.text = safeItem.repDescription
+        webLinkTextView.isSelectable = true
+        webLinkTextView.text = safeItem.repURLString
     }
     
     @IBAction func webLinkTapped(_ sender: Any) {
         loadWebPage(urlString: webLinkTextView.text)
-    }
-    
-    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-        urlChecking(url: URL)
-        return false
     }
 }

@@ -15,12 +15,16 @@ extension RepoModel {
 //    ImageCache.shared.ttl = 60
     func loadImage(to cell: RepositoryCell) {
         if let data = self.userAvatarData {
+            cell.userAvatarView.layer.cornerRadius = cell.userAvatarView.bounds.height / 2
             cell.userAvatarView.image = UIImage(data: data)
         } else {
             if let avatarURL = self.userAvatarURL {
                 let request = ImageRequest(url: avatarURL, processors: [ImageProcessors.Resize(size: CGSize(width: cell.pixelSize, height: cell.pixelSize), contentMode: .aspectFill), ImageProcessors.Circle()
                 ])
                 Nuke.loadImage(with: request, into: cell.userAvatarView)
+                DispatchQueue.global().async {
+                    self.saveImageToStorage(url: avatarURL)
+                }
             }
         }
     }

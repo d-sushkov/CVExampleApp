@@ -11,12 +11,20 @@ import Foundation
 struct APIData: Codable {
     let name: String
     let owner: Owner
-    let html_url: String
+    let htmlURL: String
     let description: String?
+    
+    private enum CodingKeys: String, CodingKey {
+        case name, owner, htmlURL = "html_url", description
+    }
 }
 
 struct Owner: Codable {
     let login: String
-    let avatar_url: String
+    let avatarURL: String
     let type: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case login, avatarURL = "avatar_url", type
+    }
 }

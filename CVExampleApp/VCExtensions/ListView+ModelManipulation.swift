@@ -41,11 +41,7 @@ extension ListViewController {
                 dataFromAPI[index].setValue(item.userName, forKey: "userName")
                 dataFromAPI[index].setValue(item.userType, forKey: "userType")
                 dataFromAPI[index].setValue(item.userAvatarURL, forKey: "userAvatarURL")
-                DispatchQueue.global().async {
-                    if let url = item.userAvatarURL {
-                        self.dataFromAPI[index].saveImageToStorage(url: url)
-                    }
-                }
+                dataFromAPI[index].setValue(nil, forKey: "userAvatarData")
             }
         }
         saveItems()

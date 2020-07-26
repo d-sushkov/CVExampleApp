@@ -41,7 +41,7 @@ class ListViewController: UITableViewController {
     }
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! DetailViewController
+        guard let destinationVC = segue.destination as? DetailViewController else {return}
         
         destinationVC.title = selectedCell?.repName
         destinationVC.selectedItem = selectedCell

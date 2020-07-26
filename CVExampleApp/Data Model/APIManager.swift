@@ -9,14 +9,14 @@
 import UIKit
 import CoreData
 
-protocol APIManagerDelegate {
+protocol APIManagerDelegate: class {
     func didUpdateData(_ apiManager: APIManager, results: [RepoModel])
     func didFailWithError(error: Error)
 }
 
 struct APIManager {
     
-    var delegate: APIManagerDelegate?
+    weak var delegate: APIManagerDelegate?
     
     let childContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.newBackgroundContext()
     
@@ -52,10 +52,10 @@ struct APIManager {
                 let result = RepoModel(context: childContext)
                 result.repName = repository.name
                 result.repDescription = repository.description
-                result.repURLString = repository.html_url
+                result.repURLString = repository.htmlURL
                 result.userName = repository.owner.login
                 result.userType = repository.owner.type
-                result.userAvatarURL = URL(string: repository.owner.avatar_url)
+                result.userAvatarURL = URL(string: repository.owner.avatarURL)
                 results.append(result)
             }
             return results
