@@ -23,14 +23,14 @@ extension DetailViewController: MFMailComposeViewControllerDelegate {
         }
     }
     
-    func loadWebPage(urlString: String?) {
+    private func loadWebPage(urlString: String?) {
         guard let safeString = urlString else {return}
         if let url = URL(string: safeString) {
             let webVC = SFSafariViewController(url: url)
             present(webVC, animated: true)
         }
     }
-    func openMFMail(email: String) {
+    private func openMFMail(email: String) {
         if MFMailComposeViewController.canSendMail() {
             let mailComposer = MFMailComposeViewController()
             mailComposer.mailComposeDelegate = self

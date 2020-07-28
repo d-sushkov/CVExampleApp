@@ -35,7 +35,9 @@ class DetailViewController: UIViewController {
         webLinkTextView.text = safeItem.repURLString
     }
     
-    @IBAction func webLinkTapped(_ sender: Any) {
-        loadWebPage(urlString: webLinkTextView.text)
+    @IBAction private func webLinkTapped(_ sender: Any) {
+        if let url = URL(string: webLinkTextView.text) {
+            urlChecking(url: url)
+        }
     }
 }

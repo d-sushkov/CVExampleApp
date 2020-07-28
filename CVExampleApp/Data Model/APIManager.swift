@@ -20,7 +20,7 @@ struct APIManager {
     
     let childContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.newBackgroundContext()
     
-    var apiURL: String {
+    private var apiURL: String {
         return "https://api.github.com/repositories?since=\(Int.random(in: 1...99999999))"
     }
     
@@ -42,7 +42,7 @@ struct APIManager {
         }
     }
     
-    func parseJSON(_ apiData: Data) -> [RepoModel]? {
+    private func parseJSON(_ apiData: Data) -> [RepoModel]? {
         childContext.reset()
         let decoder = JSONDecoder()
         do {

@@ -10,9 +10,7 @@ import UIKit
 import Nuke
 
 extension RepoModel {
-//    CONFIGURE CACHE!!!!
-//    ImageCache.shared.costLimit = 1024 * 1024 * 50
-//    ImageCache.shared.ttl = 60
+
     func loadImage(to cell: RepositoryCell) {
         if let data = self.userAvatarData {
             cell.userAvatarView.layer.cornerRadius = cell.userAvatarView.bounds.height / 2
@@ -39,10 +37,14 @@ extension RepoModel {
         }
     }
     
-    func saveImageToStorage(url: URL) {
+    private func saveImageToStorage(url: URL) {
         let request = URLRequest(url: url)
         let data = DataLoader.sharedUrlCache.cachedResponse(for: request)?.data
         self.userAvatarData = data
+    }
+    
+    func clearImageCache() {
+        ImageCache.shared.removeAll()
     }
     
 }

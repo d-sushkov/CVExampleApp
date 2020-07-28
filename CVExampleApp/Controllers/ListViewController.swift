@@ -11,7 +11,7 @@ import CoreData
 
 class ListViewController: UITableViewController {
     
-    var apiManager = APIManager()
+    private var apiManager = APIManager()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     let hapticGenerator = UIImpactFeedbackGenerator(style: .light)
@@ -35,7 +35,7 @@ class ListViewController: UITableViewController {
         preserveLargeTitleSize()
     }
     
-    @IBAction func pullToRefresh(_ sender: UIRefreshControl) {
+    @IBAction private func pullToRefresh(_ sender: UIRefreshControl) {
         hapticGenerator.impactOccurred()
         apiManager.performRequest()
     }

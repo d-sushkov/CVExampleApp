@@ -11,7 +11,7 @@ import CoreData
 
 extension ListViewController {
     
-    func saveItems() {
+    private func saveItems() {
         if context.hasChanges {
             do {
                 try context.save()
@@ -29,7 +29,6 @@ extension ListViewController {
         } catch {
             print("Error fetching data from context: \(error)")
         }
-        tableView.reloadData()
     }
     
     func updateItems(with newModel: [RepoModel]) {
@@ -44,6 +43,7 @@ extension ListViewController {
                 dataFromAPI[index].setValue(nil, forKey: "userAvatarData")
             }
         }
+        dataFromAPI[0].clearImageCache()
         saveItems()
     }
 }

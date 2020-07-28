@@ -10,8 +10,8 @@
         <!--Repositories-->
         <scene sceneID="aUP-TG-qq5">
             <objects>
-                <tableViewController id="nQB-ey-a8X" customClass="ListViewController" customModule="CVExampleApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ykx-tz-WgP">
+                <tableViewController extendedLayoutIncludesOpaqueBars="YES" id="nQB-ey-a8X" customClass="ListViewController" customModule="CVExampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ykx-tz-WgP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -47,7 +47,8 @@
                             <outlet property="delegate" destination="nQB-ey-a8X" id="Jdd-zj-Vzl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Repositories" largeTitleDisplayMode="always" id="JDv-qu-otb"/>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <navigationItem key="navigationItem" title="Repositories" id="JDv-qu-otb"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="JxE-Ui-B5v">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -67,7 +68,7 @@
         <!--Repository-->
         <scene sceneID="kf7-kL-S72">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="FNL-jW-K9T" customClass="DetailViewController" customModule="CVExampleApp" sceneMemberID="viewController">
+                <viewController id="FNL-jW-K9T" customClass="DetailViewController" customModule="CVExampleApp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xhl-h9-LlZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -182,7 +183,7 @@
         <scene sceneID="5Mj-xs-fim">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pc2-iC-AGl" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="p0Y-op-IqR">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>

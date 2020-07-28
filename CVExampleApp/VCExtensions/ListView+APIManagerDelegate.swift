@@ -16,6 +16,7 @@ extension ListViewController: APIManagerDelegate {
                 do {
                     try apiManager.childContext.save()
                     self.loadItems(from: self.context)
+                    self.tableView.reloadData()
                 } catch {
                     print("ERROR saving Child context")
                 }

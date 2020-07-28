@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIViewController {
+    
     func adjustLargeTitleSize() {
         guard let title = title, #available(iOS 11.0, *) else { return }
         
@@ -16,7 +17,7 @@ extension UIViewController {
         var fontSize = UIFont.preferredFont(forTextStyle: .largeTitle).pointSize
         var width = title.size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: fontSize)]).width
         
-        while width > maxWidth {
+        while width > maxWidth && fontSize > 17.0 {
             fontSize -= 1
             width = title.size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: fontSize)]).width
         }
