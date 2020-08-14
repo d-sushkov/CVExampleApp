@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC16176C24E6F7A6004F513D /* gitHubErrorData.json in Resources */ = {isa = PBXBuildFile; fileRef = BC16176B24E6F7A5004F513D /* gitHubErrorData.json */; };
 		BC69508224CA033600914A17 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = BC69508124CA033600914A17 /* Nuke */; };
 		BC69508824CB698100914A17 /* RepoModel+ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC69508724CB698100914A17 /* RepoModel+ImageProcessing.swift */; };
 		BC803FFF24C2048600C79211 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC803FFE24C2048600C79211 /* AppDelegate.swift */; };
@@ -28,6 +29,8 @@
 		BCF2458424CC6BB6004D72FF /* DetailView+EmailAndWeb.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF2458324CC6BB6004D72FF /* DetailView+EmailAndWeb.swift */; };
 		BCF2458624CC6C4D004D72FF /* UIView+NavBarLargeTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF2458524CC6C4D004D72FF /* UIView+NavBarLargeTitle.swift */; };
 		BCF2458824CE1DA9004D72FF /* DetailView+TextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF2458724CE1DA9004D72FF /* DetailView+TextViewDelegate.swift */; };
+		BCFD635D24E6CE020025DBFD /* CVExampleMockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFD635A24E6CDE90025DBFD /* CVExampleMockTests.swift */; };
+		BCFD635F24E6CFA20025DBFD /* gitHubData.json in Resources */ = {isa = PBXBuildFile; fileRef = BCFD635624E5D4E00025DBFD /* gitHubData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC16176B24E6F7A5004F513D /* gitHubErrorData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gitHubErrorData.json; sourceTree = "<group>"; };
 		BC69508724CB698100914A17 /* RepoModel+ImageProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepoModel+ImageProcessing.swift"; sourceTree = "<group>"; };
 		BC803FFB24C2048600C79211 /* CVExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CVExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC803FFE24C2048600C79211 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 		BCF2458324CC6BB6004D72FF /* DetailView+EmailAndWeb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailView+EmailAndWeb.swift"; sourceTree = "<group>"; };
 		BCF2458524CC6C4D004D72FF /* UIView+NavBarLargeTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+NavBarLargeTitle.swift"; sourceTree = "<group>"; };
 		BCF2458724CE1DA9004D72FF /* DetailView+TextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailView+TextViewDelegate.swift"; sourceTree = "<group>"; };
+		BCFD635624E5D4E00025DBFD /* gitHubData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gitHubData.json; sourceTree = "<group>"; };
+		BCFD635A24E6CDE90025DBFD /* CVExampleMockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVExampleMockTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +129,9 @@
 			isa = PBXGroup;
 			children = (
 				BC80401824C2048700C79211 /* CVExampleAppTests.swift */,
+				BCFD635A24E6CDE90025DBFD /* CVExampleMockTests.swift */,
+				BCFD635624E5D4E00025DBFD /* gitHubData.json */,
+				BC16176B24E6F7A5004F513D /* gitHubErrorData.json */,
 				BC80401A24C2048700C79211 /* Info.plist */,
 			);
 			path = CVExampleAppTests;
@@ -278,6 +287,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCFD635F24E6CFA20025DBFD /* gitHubData.json in Resources */,
+				BC16176C24E6F7A6004F513D /* gitHubErrorData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC80401924C2048700C79211 /* CVExampleAppTests.swift in Sources */,
+				BCFD635D24E6CE020025DBFD /* CVExampleMockTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,7 +511,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4HVP6F47R6;
 				INFOPLIST_FILE = CVExampleAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -520,7 +534,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4HVP6F47R6;
 				INFOPLIST_FILE = CVExampleAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (

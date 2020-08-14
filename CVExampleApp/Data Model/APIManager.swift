@@ -42,7 +42,7 @@ struct APIManager {
         }
     }
     
-    private func parseJSON(_ apiData: Data) -> [RepoModel]? {
+    func parseJSON(_ apiData: Data) -> [RepoModel]? {
         childContext.reset()
         let decoder = JSONDecoder()
         do {
